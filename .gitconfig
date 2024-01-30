@@ -1,0 +1,63 @@
+[include]
+  # username, email, keys
+  path = ~/.gitconfig-credentials
+
+[init]
+  defaultBranch = main
+
+[alias]
+  # simples
+  a = add
+  b = branch
+  c = clone
+  cm = commit -m
+  co = checkout
+  f = fetch
+  p = pull
+  r = remote
+  ra = remote add
+  l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+  # Oneliner status
+  s = status -s
+  # diff against staged
+  dc = diff --cached
+  # list tags
+  lt = tag -l
+  # merge this commit with prev
+  amend = commit --amend --reuse-message=HEAD
+  # Change the commit message
+  edit = commit --amend --only
+  rl = reflog
+  # fail if merge will create a merge commit
+  ff = merge --ff-only
+  whoami = "f() { git config user.name && git config user.email}; f"
+
+[apply]
+  whitespace=nowarn
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+
+[core]
+  editor = vim
+
+[fetch]
+  prune = true
+
+[pull]
+  ff = only
+
+[merge]
+  log = true
+  conflictStyle = diff3
+
+[push]
+  default = simple
+
+
+[commit]
+  verbose = true
