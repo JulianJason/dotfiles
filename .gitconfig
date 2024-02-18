@@ -44,20 +44,37 @@
 
 [core]
   editor = vim
+  pager = delta
+
+[diff]
+  algorithm = histogram
 
 [fetch]
   prune = true
 
 [pull]
+  # Intent is to avoid accidentally creating a merge commit when you run git pull on diverged upstream
   ff = only
 
 [merge]
   log = true
-  conflictStyle = diff3
+  # Readable conflict styles
+  conflictStyle = zdiff3
 
 [push]
   default = simple
 
+[rebase]
+  # Automatically combine all --fixup commits when rebasing
+  autosquash = true
 
 [commit]
   verbose = true
+
+[rerere]
+  # REuse REcovered REsolution -  automatically remembers and resolve recorded conflicts
+  enabled = true
+
+[help]
+  autocorrect = prompt
+
