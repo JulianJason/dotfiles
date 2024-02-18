@@ -33,7 +33,6 @@
   rl = reflog
   # fail if merge will create a merge commit
   ff = merge --ff-only
-  whoami = "f() { git config user.name && git config user.email}; f"
 
 [apply]
   whitespace=nowarn
